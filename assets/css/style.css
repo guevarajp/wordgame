@@ -1,0 +1,19 @@
+
+h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+#word-game {
+    text-align: center;
+}
+
+#word-game h2 {
+    font-size: 36px;
+}
+
+#past-inputs {
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 18px;
+}
