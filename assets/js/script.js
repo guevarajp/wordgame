@@ -6,6 +6,8 @@ var answerEl = document.getElementById("past-inputs");
 var timeLeft = 30;
 
 var wordBase = ["candle", "table", "variable"];
+var selected = [];
+var wordChoice;
 
 function countdown() {
   var timeInterval = setInterval(function () {
@@ -23,15 +25,17 @@ submitEl.addEventListener("click", function (event) {
   event.preventDefault();
   var inputText = inputEl.value;
   inputEl.value = "";
+  if (selected.includes(inputText)) {
+  }
 });
 
 function selectWord() {
-    var wordChoice = Math.floor(Math.random() * wordBase.length);
-    var selected = wordBase[wordChoice].split("");
+  wordChoice = Math.floor(Math.random() * wordBase.length);
+  selected = wordBase[wordChoice].split("");
 
-    for(var i = 0; i < selected.length; i++) {
-        answerEl.textContent += "_ "
-    }
+  for (var i = 0; i < selected.length; i++) {
+    answerEl.textContent += "_ ";
+  }
 }
 
 selectWord();
