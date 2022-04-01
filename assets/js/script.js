@@ -1,10 +1,11 @@
 var submitEl = document.getElementById("submit_button");
-
 var inputEl = document.getElementById("word-input");
-
 var timerEl = document.getElementById("timer");
+var answerEl = document.getElementById("past-inputs");
 
-var timeLeft = 60;
+var timeLeft = 30;
+
+var wordBase = ["candle", "table", "variable"];
 
 function countdown() {
   var timeInterval = setInterval(function () {
@@ -18,11 +19,20 @@ function countdown() {
   }, 1000);
 }
 
-countdown();
-
 submitEl.addEventListener("click", function (event) {
   event.preventDefault();
   var inputText = inputEl.value;
   inputEl.value = "";
-  console.log(inputText);
 });
+
+function selectWord() {
+    var wordChoice = Math.floor(Math.random() * wordBase.length);
+    var selected = wordBase[wordChoice].split("");
+
+    for(var i = 0; i < selected.length; i++) {
+        answerEl.textContent += "_ "
+    }
+}
+
+selectWord();
+countdown();
