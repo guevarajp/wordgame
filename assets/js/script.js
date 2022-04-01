@@ -25,7 +25,18 @@ submitEl.addEventListener("click", function (event) {
   event.preventDefault();
   var inputText = inputEl.value;
   inputEl.value = "";
+  var currentAns = answerEl.textContent.split("").filter(letter => letter != " ");
   if (selected.includes(inputText)) {
+    answerEl.textContent = "";
+
+    for(var i = 0; i < selected.length; i++) {
+      if(selected[i] == inputText) {
+        currentAns[i] = inputText;
+      }
+    }
+    for(var i = 0; i < currentAns.length; i++) {
+      answerEl.textContent += currentAns[i] + " ";
+    }
   }
 });
 
